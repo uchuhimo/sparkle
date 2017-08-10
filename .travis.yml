@@ -4,6 +4,15 @@ compiler:
   - clang
   - gcc
 
+addons:
+  apt:
+    sources:
+      - boost-latest
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-4.9
+      - libboost1.55-all-dev
+
 script:
   - mkdir build
   - cd build
