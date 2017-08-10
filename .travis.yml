@@ -19,7 +19,7 @@ matrix:
         apt:
           sources:
             - ubuntu-toolchain-r-test
-            - llvm-toolchain-precise-4.0
+            - llvm-toolchain-trusty-4.0
             - boost-latest
           packages:
             - clang-4.0
@@ -30,7 +30,7 @@ matrix:
       addons:
         apt:
           sources:
-            - llvm-toolchain-trusty-5.0
+            - llvm-toolchain-trusty
             - boost-latest
           packages:
             - clang-5.0
