@@ -1,6 +1,9 @@
 dist: trusty
 language: cpp
 
+cache:
+  apt: true
+
 matrix:
   include:
     - os: linux
