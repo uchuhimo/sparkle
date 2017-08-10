@@ -1,3 +1,4 @@
+dist: trusty
 language: cpp
 
 matrix:
@@ -18,24 +19,24 @@ matrix:
         apt:
           sources:
             - ubuntu-toolchain-r-test
-            - llvm-toolchain-precise-3.8
+            - llvm-toolchain-precise-4.0
             - boost-latest
           packages:
-            - clang-3.8
+            - clang-4.0
             - libboost1.55-all-dev
       env:
-        - MATRIX_EVAL="CC=clang-3.8 && CXX=clang++-3.8"
+        - MATRIX_EVAL="CC=clang-4.0 && CXX=clang++-4.0"
     - os: linux
       addons:
         apt:
           sources:
-            - llvm-toolchain-trusty-3.9
+            - llvm-toolchain-trusty-5.0
             - boost-latest
           packages:
-            - clang-3.9
+            - clang-5.0
             - libboost1.55-all-dev
       env:
-        - MATRIX_EVAL="CC=clang-3.9 && CXX=clang++-3.9"
+        - MATRIX_EVAL="CC=clang-5.0 && CXX=clang++-5.0"
 
 before_install:
     - eval "${MATRIX_EVAL}"
