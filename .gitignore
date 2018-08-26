@@ -150,3 +150,6 @@ CTestTestfile.cmake
 
 .idea
 build
+
+cmake-build-debug
+cmake-build-release

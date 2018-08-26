@@ -8,24 +8,24 @@
 
 namespace sparkle {
 
-Producer::Builder producer(ActorSystem &actor_system) {
-  return {actor_system};
-}
+    Producer::Builder producer(ActorSystem &actor_system) {
+        return {actor_system};
+    }
 
-template<typename S>
-typename StatefulProducer<S>::Builder producer(ActorSystem &actor_system) {
-  return {actor_system};
-}
+    template<typename S>
+    typename StatefulProducer<S>::Builder producer(ActorSystem &actor_system) {
+        return {actor_system};
+    }
 
-template<typename T>
-typename Reactor<T>::Builder reactor(ActorSystem &actor_system) {
-  return {actor_system};
-}
+    template<typename T>
+    typename Reactor<T>::Builder reactor(ActorSystem &actor_system) {
+        return {actor_system};
+    }
 
-template<typename T, typename S>
-typename StatefulReactor<T, S>::Builder reactor(ActorSystem &actor_system) {
-  return {actor_system};
-}
+    template<typename T, typename S>
+    typename StatefulReactor<T, S>::Builder reactor(ActorSystem &actor_system) {
+        return {actor_system};
+    }
 
 }
 

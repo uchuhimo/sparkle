@@ -6,35 +6,35 @@
 
 namespace sparkle {
 
-class Actor {
- public:
-  struct Context {
-    int32_t id = 0;
-    std::string name = "anon";
-  };
+    class Actor {
+    public:
+        struct Context {
+            int32_t id = 0;
+            std::string name = "anon";
+        };
 
-  Actor(const Context &context,
-        const std::function<void(const Context &)> &on_setup,
-        const std::function<void(const Context &)> &on_shutdown)
-      : context_(context), on_setup_(on_setup), on_shutdown_(on_shutdown) {}
+        Actor(const Context &context,
+              const std::function<void(const Context &)> &on_setup,
+              const std::function<void(const Context &)> &on_shutdown)
+                : context_(context), on_setup_(on_setup), on_shutdown_(on_shutdown) {}
 
-  virtual void Run()= 0;
+        virtual void Run() = 0;
 
-  virtual void Wait() = 0;
+        virtual void Wait() = 0;
 
-  int32_t id() {
-    return context_.id;
-  }
+        int32_t id() {
+            return context_.id;
+        }
 
-  std::string name() {
-    return context_.name;
-  }
+        std::string name() {
+            return context_.name;
+        }
 
- protected:
-  Context context_;
-  std::function<void(const Context &)> on_setup_;
-  std::function<void(const Context &)> on_shutdown_;
-};
+    protected:
+        Context context_;
+        std::function<void(const Context &)> on_setup_;
+        std::function<void(const Context &)> on_shutdown_;
+    };
 
 }
 
