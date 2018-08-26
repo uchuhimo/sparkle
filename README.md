@@ -9,16 +9,26 @@ An actor system for C++.
 
 - CMake 2.8 or higher
 - GCC 5 or higher
-- Boost 1.55 or higher
+- Conan
 
 ## Build from source
 
+Debug:
+
 ```bash
-mkdir build
-cd build
-cmake .. && make
+conan install . -s build_type=Debug --install-folder=cmake-build-debug
+cd cmake-build-debug
+cmake -DCMAKE_BUILD_TYPE=Debug .. && make
+```
+
+Release:
+
+```bash
+conan install . -s build_type=Release --install-folder=cmake-build-release
+cd cmake-build-release
+cmake -DCMAKE_BUILD_TYPE=Release .. && make
 ```
 
 # License
 
-© uchuhimo, 2017. Licensed under an [Apache 2.0](./LICENSE) license.
+© uchuhimo, 2017-2018. Licensed under an [Apache 2.0](./LICENSE) license.
